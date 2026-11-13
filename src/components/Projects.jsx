@@ -126,7 +126,7 @@ export default function Projects() {
               <div className="project-body">
                 <div className="project-title-row">
                   <h3>{project.title}</h3>
-                  <ArrowUpRight size={20} aria-hidden="true" />
+                  {/* <ArrowUpRight size={20} aria-hidden="true" /> */}
                 </div>
 
                 <p>{project.description}</p>
