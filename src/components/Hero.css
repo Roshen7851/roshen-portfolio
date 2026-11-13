@@ -1,0 +1,577 @@
+/* =========================================
+   HERO — PERSONAL BRAND / DIGITAL CRAFT
+   ========================================= */
+
+.hero {
+  --hero-bg: #080d19;
+  --hero-text: #f4f6ff;
+  --hero-muted: #a2b0ca;
+  --hero-blue: #55a6ff;
+  --hero-purple: #9b70ff;
+
+  /* Oval crop for the portrait (matches the dark blue oval in the photo).
+     Tweak these if you want a tighter or looser crop. */
+  --oval-rx: 49.6%;
+  --oval-ry: 44.6%;
+  --oval-cx: 50%;
+  --oval-cy: 45%;
+
+  position: relative;
+  isolation: isolate;
+  min-height: 100vh;
+  min-height: 100svh;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  padding: 100px 0 65px;
+  background:
+    radial-gradient(
+      ellipse at 88% 48%,
+      rgba(64, 74, 190, 0.14),
+      transparent 38%
+    ),
+    radial-gradient(
+      ellipse at 8% 5%,
+      rgba(35, 103, 190, 0.09),
+      transparent 34%
+    ),
+    var(--hero-bg);
+  color: var(--hero-text);
+}
+
+/* Subtle engineering-style grid */
+.hero-grid-pattern {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  opacity: 0.22;
+  background-image:
+    linear-gradient(rgba(100, 140, 220, 0.1) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(100, 140, 220, 0.1) 1px, transparent 1px);
+  background-size: 76px 76px;
+  mask-image: linear-gradient(
+    to bottom,
+    black 0%,
+    rgba(0, 0, 0, 0.55) 75%,
+    transparent 100%
+  );
+}
+
+.hero-container {
+  position: relative;
+  z-index: 1;
+  width: min(100% - 64px, 1320px);
+  margin-inline: auto;
+  display: grid;
+  grid-template-columns: minmax(0, 1.12fr) minmax(340px, 0.88fr);
+  align-items: center;
+  gap: clamp(35px, 6vw, 100px);
+}
+
+/* LEFT CONTENT */
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  min-width: 0;
+}
+
+.availability {
+  display: inline-flex;
+  align-items: center;
+  gap: 11px;
+  padding: 11px 16px;
+  margin-bottom: 36px;
+  border: 1px solid rgba(141, 164, 205, 0.19);
+  border-radius: 100px;
+  background: rgba(16, 25, 44, 0.72);
+  color: #e1eaff;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+}
+
+.status-dot {
+  width: 8px;
+  height: 8px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  background: #42e6a4;
+  box-shadow: 0 0 12px rgba(66, 230, 164, 0.48);
+}
+
+.hero-eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 0 0 15px;
+  color: var(--hero-blue);
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 0.24em;
+}
+
+.eyebrow-line {
+  width: 25px;
+  height: 2px;
+  border-radius: 5px;
+  background: linear-gradient(90deg, var(--hero-blue), var(--hero-purple));
+}
+
+/* The name is the primary visual anchor */
+
+.hero-name {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin: 0;
+  font-size: clamp(3.7rem, 6.2vw, 6.4rem);
+  font-weight: 900;
+  line-height: 0.91;
+  letter-spacing: -0.075em;
+}
+
+.name-first {
+  color: #f5f7ff;
+}
+
+.name-last {
+  display: block;
+  margin-top: 8px;
+}
+
+.gradient-text {
+  color: var(--hero-blue);
+  background: linear-gradient(100deg, #43b7ff 0%, #648cff 48%, #aa73ff 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.name-period {
+  -webkit-text-fill-color: #a579ff;
+}
+
+/* Professional positioning statement */
+
+.hero-headline {
+  margin-top: 30px;
+}
+
+.hero-headline h2 {
+  margin: 0;
+  font-size: clamp(1.35rem, 2.35vw, 2.15rem);
+  font-weight: 750;
+  line-height: 1.35;
+  letter-spacing: -0.045em;
+}
+
+.hero-headline h2 + h2 {
+  margin-top: 2px;
+}
+
+.hero-description {
+  max-width: 560px;
+  margin: 24px 0 0;
+  color: var(--hero-muted);
+  font-size: clamp(0.98rem, 1.2vw, 1.1rem);
+  line-height: 1.9;
+}
+
+/* CTA BUTTONS */
+
+.hero-actions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 32px;
+}
+
+.hero-actions .button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 11px;
+  min-height: 52px;
+  padding: 0 22px;
+  border: 1px solid transparent;
+  border-radius: 12px;
+  color: #f8faff;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 700;
+  transition:
+    transform 0.25s ease,
+    border-color 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.hero-actions .button:hover {
+  transform: translateY(-3px);
+}
+
+.hero-actions .button-primary {
+  background: linear-gradient(105deg, #168fff, #7751f9);
+  box-shadow: 0 9px 28px rgba(61, 106, 255, 0.16);
+}
+
+.hero-actions .button-primary:hover {
+  box-shadow: 0 12px 34px rgba(89, 99, 255, 0.32);
+}
+
+.hero-actions .button-secondary {
+  border-color: rgba(137, 158, 202, 0.23);
+  background: rgba(14, 23, 41, 0.7);
+}
+
+.hero-actions .button-secondary:hover {
+  border-color: rgba(105, 153, 255, 0.7);
+}
+
+.scroll-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 13px;
+  margin-top: 43px;
+  color: #91a7cc;
+  text-decoration: none;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.24em;
+  transition: color 0.2s ease;
+}
+
+.scroll-link:hover {
+  color: #fff;
+}
+
+.scroll-icon {
+  display: grid;
+  place-items: center;
+  width: 31px;
+  height: 43px;
+  border: 1px solid rgba(134, 168, 222, 0.62);
+  border-radius: 20px;
+}
+
+/* =========================================
+   RIGHT CONTENT — OVAL PORTRAIT
+   The light blue-grey photo background is cropped away,
+   so only the dark blue oval shows on the page background.
+   ========================================= */
+
+.hero-visual {
+  position: relative;
+  z-index: 1;
+  min-width: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.portrait-stage {
+  position: relative;
+  width: min(100%, 470px);
+  padding: 32px 30px 0;
+  isolation: isolate;
+}
+
+/* All decorative elements remain behind the image */
+
+.portrait-orbit {
+  position: absolute;
+  z-index: -2;
+  top: 50%;
+  left: 50%;
+  aspect-ratio: 1;
+  border: 1px solid rgba(81, 131, 255, 0.38);
+  border-radius: 50%;
+  pointer-events: none;
+  transform: translate(-50%, -53%);
+}
+
+.portrait-orbit-one {
+  width: 108%;
+}
+
+.portrait-orbit-two {
+  width: 124%;
+  border-style: dashed;
+  border-color: rgba(131, 93, 255, 0.32);
+}
+
+.portrait-glow {
+  position: absolute;
+  z-index: -3;
+  top: 16%;
+  left: 15%;
+  width: 70%;
+  height: 70%;
+  border-radius: 50%;
+  background: rgba(59, 100, 255, 0.2);
+  filter: blur(70px);
+  pointer-events: none;
+}
+
+/* The card is now a transparent holder: no background,
+   no border, no rectangular shadow. */
+
+.portrait-card {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  aspect-ratio: 0.76;
+  overflow: visible;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+/* Crop the photo to the dark blue oval only */
+
+.profile-image,
+.profile-fallback {
+  display: block;
+  width: 100%;
+  height: 100%;
+  clip-path: ellipse(
+    var(--oval-rx) var(--oval-ry) at var(--oval-cx) var(--oval-cy)
+  );
+}
+
+.profile-image {
+  object-fit: cover;
+  object-position: center top;
+  background: transparent;
+}
+
+.profile-fallback {
+  display: grid;
+  place-items: center;
+  color: #fff;
+  font-size: 5rem;
+  font-weight: 900;
+  letter-spacing: -0.08em;
+  background:
+    radial-gradient(
+      circle at 30% 20%,
+      rgba(89, 177, 255, 0.4),
+      transparent 45%
+    ),
+    linear-gradient(140deg, #172747, #392b6d);
+}
+
+/* Thin glowing ring that follows the oval edge */
+
+.portrait-card::after {
+  content: "";
+  position: absolute;
+  z-index: 2;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 90%;
+  border: 1px solid rgba(104, 161, 255, 0.55);
+  border-radius: 50%;
+  box-shadow:
+    0 0 0 5px rgba(89, 121, 255, 0.045),
+    0 0 60px rgba(59, 100, 255, 0.22);
+  pointer-events: none;
+}
+
+/* Label sits below the oval, on the page background */
+
+.portrait-index {
+  position: absolute;
+  z-index: 3;
+  right: 13px;
+  bottom: 0;
+  left: 13px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  padding: 12px 10px;
+  border: 1px solid rgba(255, 255, 255, 0.13);
+  border-radius: 12px;
+  background: rgba(8, 13, 25, 0.82);
+  color: #eaf0ff;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.13em;
+  backdrop-filter: blur(12px);
+}
+
+.portrait-index svg {
+  color: #9a83ff;
+}
+
+.portrait-signature {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 23px;
+  color: #9aabce;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.23em;
+  white-space: nowrap;
+}
+
+.signature-line {
+  width: 26px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #538fff);
+}
+
+.signature-line:last-child {
+  transform: rotate(180deg);
+}
+
+.signature-cross {
+  color: #a77bff;
+}
+
+/* TABLET */
+
+@media (max-width: 1000px) {
+  .hero {
+    padding-top: 95px;
+  }
+
+  .hero-container {
+    grid-template-columns: minmax(0, 1.1fr) minmax(280px, 0.9fr);
+    gap: 35px;
+  }
+
+  .hero-name {
+    font-size: clamp(3.2rem, 7vw, 5rem);
+  }
+
+  .hero-headline h2 {
+    font-size: clamp(1.3rem, 2.6vw, 1.8rem);
+  }
+
+  .portrait-stage {
+    padding-inline: 15px;
+  }
+}
+
+/* MOBILE */
+
+@media (max-width: 700px) {
+  .hero {
+    min-height: auto;
+    padding: 105px 0 65px;
+  }
+
+  .hero-container {
+    width: min(100% - 40px, 520px);
+    grid-template-columns: minmax(0, 1fr);
+    gap: 58px;
+  }
+
+  .availability {
+    margin-bottom: 29px;
+    padding: 10px 13px;
+    font-size: 11px;
+  }
+
+  .hero-eyebrow {
+    font-size: 11px;
+    letter-spacing: 0.2em;
+  }
+
+  .hero-name {
+    font-size: clamp(3.4rem, 12.5vw, 5.5rem);
+    line-height: 0.94;
+  }
+
+  .name-last {
+    margin-top: 7px;
+  }
+
+  .hero-headline {
+    margin-top: 26px;
+  }
+
+  .hero-headline h2 {
+    font-size: clamp(1.35rem, 5.3vw, 1.85rem);
+    line-height: 1.4;
+  }
+
+  .hero-description {
+    margin-top: 18px;
+    font-size: 14px;
+    line-height: 1.85;
+  }
+
+  .hero-actions {
+    align-items: stretch;
+    gap: 10px;
+    margin-top: 25px;
+  }
+
+  .hero-actions .button {
+    min-height: 49px;
+    padding-inline: 15px;
+    font-size: 12px;
+  }
+
+  .scroll-link {
+    margin-top: 32px;
+  }
+
+  .hero-visual {
+    width: 100%;
+  }
+
+  /* Aspect ratio stays 0.76 so the oval crop lines up on mobile too */
+  .portrait-stage {
+    width: min(100%, 390px);
+    padding: 25px 22px 0;
+  }
+
+  .portrait-signature {
+    gap: 8px;
+    font-size: 9px;
+    letter-spacing: 0.17em;
+  }
+}
+
+/* SMALL MOBILE */
+
+@media (max-width: 380px) {
+  .hero-container {
+    width: calc(100% - 32px);
+  }
+
+  .hero-name {
+    font-size: clamp(2.8rem, 12vw, 3.4rem);
+  }
+
+  .hero-actions .button {
+    gap: 7px;
+    padding-inline: 11px;
+    font-size: 11px;
+  }
+
+  .portrait-stage {
+    padding-inline: 14px;
+  }
+}
+
+/* Accessibility: respect reduced-motion preferences */
+
+@media (prefers-reduced-motion: reduce) {
+  .hero *,
+  .hero *::before,
+  .hero *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+}
