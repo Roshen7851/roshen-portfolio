@@ -50,7 +50,7 @@ const projects = [
     description:
       "A responsive personal portfolio showcasing my UI/UX design work, software development projects, professional experience, and technical skills.",
     technologies: ["React", "Vite", "CSS", "Framer Motion"],
-    image: "/PortfolioImg.png",
+    image: "/personal-portfolio.png",
   },
 ];
 
